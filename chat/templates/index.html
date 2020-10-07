@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% set title = "Main" %}
+
+{% block content %}
+<script src="{{ url('static', filename='js/main.js') }}"> </script>
+
+ <div class="container">
+    <input type="hidden" value="{{ username }}" id="login">
+    <div class="row">
+        <div class="col-md-9">
+            <h3>MESSAGES:</h3>
+        </div>
+        <div class="col-md-3">
+            <h3>USERS:</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9">
+            <div id="messages"></div>
+        </div>
+        <div class="col-md-3">
+            <div id="user-list"></div>
+        </div>
+    </div>
+    <div class="row fixed-bottom" id="message-form">
+        <div class="col-md-9">
+            <input type="text" id="message-text" class="form-control">
+        </div>
+        <div class="col-md-3">
+            <input type="button" id="message-button" value="SEND" class="form-control">
+        </div>
+    </div>
+ </div>
+{% endblock %}
