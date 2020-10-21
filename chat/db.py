@@ -8,17 +8,16 @@ meta = MetaData()
 
 users = Table(
     'users', meta,
-    Column('id', Integer, primary_key=True),
-    Column('name', String(200), nullable=False),
+    Column('username', String(200), nullable=False, primary_key=True),
 )
 
 messages = Table(
     'messages', meta,
     Column('id', Integer, primary_key=True),
     Column('text', String(200), nullable=False),
-    Column('user_id',
-           Integer,
-           ForeignKey('users.id', ondelete='CASCADE'))
+    Column('username',
+           String(200),
+           ForeignKey('users.username', ondelete='CASCADE'))
 )
 
 

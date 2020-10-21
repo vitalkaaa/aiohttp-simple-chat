@@ -14,7 +14,7 @@ def create_tables(engine):
 def sample_data(engine):
     conn = engine.connect()
     conn.execute(users.insert(), [
-        {'name': 'testuser'}
+        {'username': 'testuser'}
     ])
 
     conn.close()

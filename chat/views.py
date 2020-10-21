@@ -30,6 +30,8 @@ async def websocket_handler(request):
     await ws.prepare(request)
 
     websocket_manager = request.app['wsmanager']
+
+    await websocket_manager.set_db_engine(request.app['db'])
     await websocket_manager.process(ws)
     await websocket_manager.close(ws)
 
